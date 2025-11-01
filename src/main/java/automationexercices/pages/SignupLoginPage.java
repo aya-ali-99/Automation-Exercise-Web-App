@@ -1,15 +1,18 @@
 package automationexercices.pages;
 
 import automationexercices.drivers.GUIDriver;
+import automationexercices.pages.components.NavigationBarComponent;
 import automationexercices.utils.dataReader.PropertyReader;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class SignupLoginPage {
+    public NavigationBarComponent navigationBar;
     private GUIDriver driver;
     private final String signupLoginEndPoint = "/login";
     public SignupLoginPage(GUIDriver driver) {
         this.driver = driver;
+        this.navigationBar = new NavigationBarComponent(driver);
     }
 
     // Locators
@@ -30,6 +33,7 @@ public class SignupLoginPage {
         driver.browser().navigateTo(PropertyReader.getProperty("baseUrlWeb") + signupLoginEndPoint);
         return this;
     }
+
 
     @Step("Enter email {email} in login field")
     public SignupLoginPage enterLoginEmail(String email){
@@ -62,9 +66,9 @@ public class SignupLoginPage {
     }
 
     @Step("Click signup button")
-    public SignupPage clickSignupButton(){
+    public SignupLoginPage clickSignupButton(){
         driver.element().click(signupButton);
-        return new SignupPage(driver);
+        return new SignupLoginPage(driver);
     }
 
     // Validations
@@ -74,14 +78,14 @@ public class SignupLoginPage {
         return this;
     }
 
-    @Step("Verify login error message is {loginError}")
+    @Step("Verify login error message is {errorExpected}")
     public SignupLoginPage verifyLoginErrorMessage(String errorExpected){
         String errorActual = driver.element().getText(loginError);
         driver.verification().Equals(errorActual, errorExpected, "Login error message is not as expected");
         return this;
     }
 
-    @Step("Verify register error message is {registerError}")
+    @Step("Verify register error message is {errorExpected}")
     public SignupLoginPage verifyRegisterErrorMessage(String errorExpected){
         String errorActual = driver.element().getText(registerError);
         driver.verification().Equals(errorActual, errorExpected, "Register error message is not as expected");
