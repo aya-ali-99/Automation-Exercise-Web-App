@@ -53,8 +53,8 @@ public class RegisterTest extends BaseTest {
                 .verifyAccountCreatedLabel();
 
         new UserManagementAPI().deleteUserAccount(
-                        testData.getJsonData("loginEmail")+ timeStamp+"@gmail.com",
-                        testData.getJsonData("loginPassword"))
+                        testData.getJsonData("signupEmail")+ timeStamp+"@gmail.com",
+                        testData.getJsonData("signupPassword"))
                 .verifyUserIsDeletedSuccessfully();
     }
 
@@ -64,7 +64,7 @@ public class RegisterTest extends BaseTest {
         // Precondition: Create a user account
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("signupName"),
-                        (testData.getJsonData("signupEmail")+ timeStamp+"@gmail.com"),
+                        (testData.getJsonData("signupEmail")+ timeStamp +"@gmail.com"),
                         testData.getJsonData("signupPassword"),
                         testData.getJsonData("titleFemale"),
                         testData.getJsonData("day"),
@@ -88,8 +88,8 @@ public class RegisterTest extends BaseTest {
                 .verifyRegisterErrorMessage(testData.getJsonData("messages.error"));
 
         new UserManagementAPI().deleteUserAccount(
-                        testData.getJsonData("loginEmail")+ timeStamp+"@gmail.com",
-                        testData.getJsonData("loginPassword"))
+                        testData.getJsonData("signupEmail")+ timeStamp+"@gmail.com",
+                        testData.getJsonData("signupPassword"))
                 .verifyUserIsDeletedSuccessfully();
     }
 
