@@ -1,7 +1,6 @@
 package automationexercices.listeners;
 
 import automationexercices.FileUtils;
-import automationexercices.drivers.UITest;
 import automationexercices.drivers.WebDriverProvider;
 import automationexercices.media.ScreenRecordManager;
 import automationexercices.media.ScreenshotsManager;
@@ -44,30 +43,25 @@ public class TestNGListeners implements ISuiteListener, IExecutionListener, IInv
 
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
         if (method.isTestMethod()) {
-            if (testResult.getInstance() instanceof UITest)
-            {
-                ScreenRecordManager.startRecording();
-            }
+            ScreenRecordManager.startRecording();
             LogsManager.info("Test Case " + testResult.getName() + " started");
         }
     }
 
     public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
         WebDriver driver = null;
+
         if (method.isTestMethod())
         {
-            if (testResult.getInstance() instanceof UITest)
-            {
-                ScreenRecordManager.stopRecording(testResult.getName());
-                if (testResult.getInstance() instanceof WebDriverProvider provider)
-                    driver = provider.getWebDriver(); //initialize driver from WebDriverProvider
-                switch (testResult.getStatus()){
-                    case ITestResult.SUCCESS -> ScreenshotsManager.takeFullPageScreenshot(driver,"passed-" + testResult.getName());
-                    case ITestResult.FAILURE -> ScreenshotsManager.takeFullPageScreenshot(driver,"failed-" + testResult.getName());
-                    case ITestResult.SKIP -> ScreenshotsManager.takeFullPageScreenshot(driver,"skipped-" + testResult.getName());
-                }
-                AllureAttachmentManager.attachRecords(testResult.getName());
+            ScreenRecordManager.stopRecording(testResult.getName());
+            if (testResult.getInstance() instanceof WebDriverProvider provider)
+                driver = provider.getWebDriver(); //initialize driver from WebDriverProvider
+            switch (testResult.getStatus()){
+                case ITestResult.SUCCESS -> ScreenshotsManager.takeFullPageScreenshot(driver,"passed-" + testResult.getName());
+                case ITestResult.FAILURE -> ScreenshotsManager.takeFullPageScreenshot(driver,"failed-" + testResult.getName());
+                case ITestResult.SKIP -> ScreenshotsManager.takeFullPageScreenshot(driver,"skipped-" + testResult.getName());
             }
+            AllureAttachmentManager.attachRecords(testResult.getName());
 
             Validation.assertAll(testResult);
 
