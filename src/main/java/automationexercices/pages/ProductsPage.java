@@ -65,8 +65,8 @@ public class ProductsPage {
 
     @Step("Click on add to cart for {productName}")
     public ProductsPage clickOnAddToCart(String productName) {
-        driver.element()
-                .hover(hoverOnProduct(productName))
+
+        driver.element().hover(hoverOnProduct(productName))
                 .click(addToCartButton(productName));
         return this;
     }
@@ -92,8 +92,8 @@ public class ProductsPage {
     // Validations
     @Step("Validate product details for {productName} with price {productPrice}")
     public ProductsPage validateProductDetails(String productName, String productPrice) {
-        String actualProductName = driver.element().getText(productName(productName));
-        String actualProductPrice = driver.element().getText(productPrice(productName));
+        String actualProductName = driver.element().hover(productName(productName)).getText(this.productName(productName));
+        String actualProductPrice = driver.element().hover(productName(productName)).getText(this.productPrice(productName));
         LogsManager.info("Actual product name: " + actualProductName + ", with price: " + actualProductPrice);
         driver.validation().Equals(actualProductName, productName, "Product name does not match");
         driver.validation().Equals(actualProductPrice, productPrice, "Product price does not match");
