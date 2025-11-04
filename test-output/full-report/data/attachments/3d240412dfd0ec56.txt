@@ -1,0 +1,233 @@
+[DEBUG] - [05-11-2025 00:39:27] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Ayaya\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml"
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.listeners.TestNGListeners] - Test Execution started
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.FileUtils] - File deleted: C:\Ayaya\ITI\Automation\Projects\AutomationExerciseWeb\test-output\Logs\logs.log
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.listeners.TestNGListeners] - Directories cleaned
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.FileUtils] - Directory created: test-output/screenshots/
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.FileUtils] - Directory created: test-output/recordings/
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.FileUtils] - Directory created: src/test/resources/downloads/
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.listeners.TestNGListeners] - Directories created
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.utils.dataReader.PropertyReader] - Properties file loaded successfully
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.listeners.TestNGListeners] - Properties loaded
+[INFO] - [05-11-2025 00:39:28] [main] [automationexercices.utils.report.AllureEnvironmentManager] - Allure environment variables set.
+[INFO] - [05-11-2025 00:39:29] [main] [automationexercices.utils.report.AllureBinaryManager] - Allure binaries already exist.
+[INFO] - [05-11-2025 00:39:29] [main] [automationexercices.listeners.TestNGListeners] - Allure environment set
+[INFO] - [05-11-2025 00:39:30] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Ayaya\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[INFO] - [05-11-2025 00:39:30] [main] [automationexercices.drivers.GUIDriver] - Initializing GUIDriver with browser: Chrome
+[INFO] - [05-11-2025 00:39:30] [main] [automationexercices.drivers.GUIDriver] - Starting driver for browser: CHROME
+[INFO] - [05-11-2025 00:39:33] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com
+[INFO] - [05-11-2025 00:39:33] [main] [automationexercices.listeners.TestNGListeners] - Test Case registerNewAccountTC started
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['name']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['email']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['password']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['titleFemale']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['day']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['month']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['year']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['firstName']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['lastName']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['companyName']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['address1']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['address2']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['country']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['zipcode']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['state']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['city']
+[DEBUG] - [05-11-2025 00:39:34] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['mobileNumber']
+[INFO] - [05-11-2025 00:39:37] [main] [api.UserManagementAPI] - <html>
+  <body>{"responseCode": 201, "message": "User created!"}</body>
+</html>
+[INFO] - [05-11-2025 00:39:38] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:39:38] [main] [automationexercices.listeners.TestNGListeners] - Test Case registerNewAccountTC passed
+[INFO] - [05-11-2025 00:39:38] [main] [automationexercices.listeners.TestNGListeners] - Test Case loginToAccountTC started
+[INFO] - [05-11-2025 00:39:39] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com/login
+[INFO] - [05-11-2025 00:39:39] [main] [automationexercices.utils.actions.ElementActions] - Typed text 'automationcheckout_1762295970021@gmail.com' into element: By.cssSelector: [data-qa="login-email"]
+[INFO] - [05-11-2025 00:39:39] [main] [automationexercices.utils.actions.ElementActions] - Typed text 'P@ssw0rd' into element: By.cssSelector: [data-qa="login-password"]
+[INFO] - [05-11-2025 00:39:39] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (392, 417)
+[INFO] - [05-11-2025 00:39:39] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (392, 417)
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: [data-qa="login-button"]
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.tagName: b - Text: Automation_checkout
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.pages.components.NavigationBarComponent] - Verifying user label: Automation_checkout
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.listeners.TestNGListeners] - Test Case loginToAccountTC passed
+[INFO] - [05-11-2025 00:39:40] [main] [automationexercices.listeners.TestNGListeners] - Test Case addProductToCartTC started
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com/products
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - Hovered over element: By.xpath: //div[@class='productinfo text-center'] /p[.='Men Tshirt']
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (960, 884)
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (960, 884)
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.xpath: //div[@class='productinfo text-center'] /p[.='Men Tshirt'] //following-sibling::a
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: 
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: 
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: Your product has been added to cart.
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.pages.ProductsPage] - Actual item added label: Your product has been added to cart.
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (827, 733)
+[INFO] - [05-11-2025 00:39:41] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (827, 733)
+[ERROR] - [05-11-2025 00:39:58] [main] [automationexercices.media.ScreenshotsManager] - Failed to Capture Screenshot invalid session id
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [64b969119ab7c8a11a230c952cf1f4c7, screenshot {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\Ayaya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57606}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57606/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 64b969119ab7c8a11a230c952cf1f4c7
+[INFO] - [05-11-2025 00:39:58] [main] [automationexercices.listeners.TestNGListeners] - Test Case addProductToCartTC failed
+[INFO] - [05-11-2025 00:39:58] [main] [automationexercices.listeners.TestNGListeners] - Test Case checkoutTC started
+[ERROR] - [05-11-2025 00:39:58] [main] [automationexercices.media.ScreenshotsManager] - Failed to Capture Screenshot invalid session id
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [64b969119ab7c8a11a230c952cf1f4c7, screenshot {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\Ayaya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57606}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57606/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 64b969119ab7c8a11a230c952cf1f4c7
+[INFO] - [05-11-2025 00:39:58] [main] [automationexercices.listeners.TestNGListeners] - Test Case checkoutTC skipped
+[INFO] - [05-11-2025 00:39:58] [main] [automationexercices.listeners.TestNGListeners] - Test Case paymentTC started
+[ERROR] - [05-11-2025 00:39:58] [main] [automationexercices.media.ScreenshotsManager] - Failed to Capture Screenshot invalid session id
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [64b969119ab7c8a11a230c952cf1f4c7, screenshot {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\Ayaya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57606}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57606/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 64b969119ab7c8a11a230c952cf1f4c7
+[INFO] - [05-11-2025 00:39:59] [main] [automationexercices.listeners.TestNGListeners] - Test Case paymentTC skipped
+[INFO] - [05-11-2025 00:39:59] [main] [automationexercices.listeners.TestNGListeners] - Test Case verifyInvoiceFileTC started
+[ERROR] - [05-11-2025 00:39:59] [main] [automationexercices.media.ScreenshotsManager] - Failed to Capture Screenshot invalid session id
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [64b969119ab7c8a11a230c952cf1f4c7, screenshot {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\Ayaya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57606}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57606/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 64b969119ab7c8a11a230c952cf1f4c7
+[INFO] - [05-11-2025 00:39:59] [main] [automationexercices.listeners.TestNGListeners] - Test Case verifyInvoiceFileTC skipped
+[INFO] - [05-11-2025 00:39:59] [main] [automationexercices.listeners.TestNGListeners] - Test Case deleteAccountTC started
+[ERROR] - [05-11-2025 00:39:59] [main] [automationexercices.media.ScreenshotsManager] - Failed to Capture Screenshot invalid session id
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [64b969119ab7c8a11a230c952cf1f4c7, screenshot {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\Ayaya\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57606}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57606/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 64b969119ab7c8a11a230c952cf1f4c7
+[INFO] - [05-11-2025 00:39:59] [main] [automationexercices.listeners.TestNGListeners] - Test Case deleteAccountTC skipped
+[DEBUG] - [05-11-2025 00:40:07] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Ayaya\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml"
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.listeners.TestNGListeners] - Test Execution started
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.FileUtils] - File deleted: C:\Ayaya\ITI\Automation\Projects\AutomationExerciseWeb\test-output\Logs\logs.log
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.listeners.TestNGListeners] - Directories cleaned
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.FileUtils] - Directory created: test-output/screenshots/
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.FileUtils] - Directory created: test-output/recordings/
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.FileUtils] - Directory created: src/test/resources/downloads/
+[INFO] - [05-11-2025 00:40:07] [main] [automationexercices.listeners.TestNGListeners] - Directories created
+[INFO] - [05-11-2025 00:40:08] [main] [automationexercices.utils.dataReader.PropertyReader] - Properties file loaded successfully
+[INFO] - [05-11-2025 00:40:08] [main] [automationexercices.listeners.TestNGListeners] - Properties loaded
+[INFO] - [05-11-2025 00:40:08] [main] [automationexercices.utils.report.AllureEnvironmentManager] - Allure environment variables set.
+[INFO] - [05-11-2025 00:40:09] [main] [automationexercices.utils.report.AllureBinaryManager] - Allure binaries already exist.
+[INFO] - [05-11-2025 00:40:09] [main] [automationexercices.listeners.TestNGListeners] - Allure environment set
+[INFO] - [05-11-2025 00:40:09] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Ayaya\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[INFO] - [05-11-2025 00:40:09] [main] [automationexercices.drivers.GUIDriver] - Initializing GUIDriver with browser: Chrome
+[INFO] - [05-11-2025 00:40:09] [main] [automationexercices.drivers.GUIDriver] - Starting driver for browser: CHROME
+[INFO] - [05-11-2025 00:40:12] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com
+[INFO] - [05-11-2025 00:40:12] [main] [automationexercices.listeners.TestNGListeners] - Test Case registerNewAccountTC started
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['name']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['email']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['password']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['titleFemale']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['day']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['month']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['year']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['firstName']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['lastName']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['companyName']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['address1']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['address2']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['country']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['zipcode']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['state']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['city']
+[DEBUG] - [05-11-2025 00:40:13] [main] [com.jayway.jsonpath.internal.path.CompiledPath] - Evaluating path: $['mobileNumber']
+[INFO] - [05-11-2025 00:40:16] [main] [api.UserManagementAPI] - <html>
+  <body>{"responseCode": 201, "message": "User created!"}</body>
+</html>
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.listeners.TestNGListeners] - Test Case registerNewAccountTC passed
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.listeners.TestNGListeners] - Test Case loginToAccountTC started
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com/login
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.utils.actions.ElementActions] - Typed text 'automationcheckout_1762296009307@gmail.com' into element: By.cssSelector: [data-qa="login-email"]
+[INFO] - [05-11-2025 00:40:18] [main] [automationexercices.utils.actions.ElementActions] - Typed text 'P@ssw0rd' into element: By.cssSelector: [data-qa="login-password"]
+[INFO] - [05-11-2025 00:40:19] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (392, 417)
+[INFO] - [05-11-2025 00:40:19] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (392, 417)
+[INFO] - [05-11-2025 00:40:19] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: [data-qa="login-button"]
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.tagName: b - Text: Automation_checkout
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.pages.components.NavigationBarComponent] - Verifying user label: Automation_checkout
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.listeners.TestNGListeners] - Test Case loginToAccountTC passed
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.listeners.TestNGListeners] - Test Case addProductToCartTC started
+[INFO] - [05-11-2025 00:40:20] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com/products
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Hovered over element: By.xpath: //div[@class='productinfo text-center'] /p[.='Men Tshirt']
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (960, 884)
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (960, 884)
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.xpath: //div[@class='productinfo text-center'] /p[.='Men Tshirt'] //following-sibling::a
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: 
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: 
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: 
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: .modal-body > p - Text: Your product has been added to cart.
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.pages.ProductsPage] - Actual item added label: Your product has been added to cart.
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (827, 733)
+[INFO] - [05-11-2025 00:40:21] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (827, 733)
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: p > [href="/view_cart"]
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: (//h4  /a[.='Men Tshirt'])[1] - Text: Men Tshirt
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: (//h4  /a[.='Men Tshirt'] //following::td[@class='cart_price'] /p)[1] - Text: Rs. 400
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: (//h4  /a[.='Men Tshirt'] //following::td[@class='cart_quantity'] /button)[1] - Text: 1
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: (//h4  /a[.='Men Tshirt'] //following::td[@class='cart_total'] /p)[1] - Text: Rs. 400
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.pages.CartPage] - Actual product name:Men Tshirt, actual product price:Rs. 400, actual product quantity:1, actual product total:Rs. 400
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.listeners.TestNGListeners] - Test Case addProductToCartTC passed
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.listeners.TestNGListeners] - Test Case checkoutTC started
+[INFO] - [05-11-2025 00:40:22] [main] [automationexercices.utils.actions.BrowserActions] - Navigated to URL: https://automationexercise.com/view_cart
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (1210, 224)
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (1210, 224)
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: .col-sm-6 a
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_firstname address_lastname'] - Text: Mrs. Automation_Firstname Automation_Lastname
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_address1 address_address2'][1] - Text: Automation_Company
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_address1 address_address2'][2] - Text: Automation_Address1
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_address1 address_address2'][3] - Text: Automation_Address2
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_city address_state_name address_postcode'] - Text: Automation_City Automation_State 12345
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_country_name'] - Text: Canada
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_delivery'] /li[@class='address_phone'] - Text: 1234567890
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_firstname address_lastname'] - Text: Mrs. Automation_Firstname Automation_Lastname
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_address1 address_address2'][1] - Text: Automation_Company
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_address1 address_address2'][2] - Text: Automation_Address1
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_address1 address_address2'][3] - Text: Automation_Address2
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_city address_state_name address_postcode'] - Text: Automation_City Automation_State 12345
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_country_name'] - Text: Canada
+[INFO] - [05-11-2025 00:40:23] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.xpath: //ul[@id='address_invoice'] /li[@class='address_phone'] - Text: 1234567890
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.listeners.TestNGListeners] - Test Case checkoutTC passed
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.listeners.TestNGListeners] - Test Case paymentTC started
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (1265, 1148)
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (1265, 1148)
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: [href="/payment"]
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - Typed text 'Automation Card' into element: By.cssSelector: [name="name_on_card"]
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - Typed text '1234567890123456' into element: By.cssSelector: [name="card_number"]
+[INFO] - [05-11-2025 00:40:24] [main] [automationexercices.utils.actions.ElementActions] - Typed text '123' into element: By.cssSelector: [name="cvc"]
+[INFO] - [05-11-2025 00:40:25] [main] [automationexercices.utils.actions.ElementActions] - Typed text '12' into element: By.cssSelector: [name="expiry_month"]
+[INFO] - [05-11-2025 00:40:25] [main] [automationexercices.utils.actions.ElementActions] - Typed text '2036' into element: By.cssSelector: [name="expiry_year"]
+[INFO] - [05-11-2025 00:40:25] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (700, 548)
+[INFO] - [05-11-2025 00:40:25] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (700, 548)
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.id: submit
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.utils.actions.ElementActions] - Retrieved text from element: By.cssSelector: #form > div > div > div > p - Text: Congratulations! Your order has been confirmed!
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (412, 339)
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (412, 339)
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: [class="btn btn-default check_out"]
+[INFO] - [05-11-2025 00:40:27] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.listeners.TestNGListeners] - Test Case paymentTC passed
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.listeners.TestNGListeners] - Test Case verifyInvoiceFileTC started
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.utils.actions.ElementActions] - initialLocation: (412, 339)
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.utils.actions.ElementActions] - finalLocation: (412, 339)
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.utils.actions.ElementActions] - Clicked on element: By.cssSelector: [class="btn btn-default check_out"]
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.listeners.TestNGListeners] - Test Case verifyInvoiceFileTC passed
+[INFO] - [05-11-2025 00:40:28] [main] [automationexercices.listeners.TestNGListeners] - Test Case deleteAccountTC started
+[INFO] - [05-11-2025 00:40:29] [main] [api.UserManagementAPI] - <html>
+  <body>{"responseCode": 200, "message": "Account deleted!"}</body>
+</html>
+[INFO] - [05-11-2025 00:40:29] [main] [automationexercices.media.ScreenshotsManager] - Capturing Screenshot Succeeded

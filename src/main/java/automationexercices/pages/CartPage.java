@@ -18,6 +18,9 @@ public class CartPage {
 
     // Locators
     private final By proceedToCheckOutBtn = By.cssSelector(".col-sm-6 a");
+    private final By checkOutLabel = By.cssSelector(".modal-dialog");
+    private final By registerLoginBtn = By.cssSelector("[href=\"/login\"] u");
+    private final By continueOnCart = By.cssSelector(".modal-footer button");
 
     // Dynamic Locators
     private final By getProductName(String productName){
@@ -48,15 +51,27 @@ public class CartPage {
     }
 
     @Step("Click on Proceed to Checkout button")
-    public CartPage clickOnProceedToCheckoutButton() {
+    public CheckoutPage clickOnProceedToCheckoutButton() {
         driver.element().click(proceedToCheckOutBtn);
-        return this;
+        return new CheckoutPage(driver);
     }
 
     @Step("Remove product from the cart")
     public CartPage removeProductFromCart(String productName) {
         driver.element().click(removeProductDL(productName));
         return this;
+    }
+
+    @Step("Click on continue on cart button")
+    public CartPage clickOnContinueOnCartButton() {
+        driver.element().click(continueOnCart);
+        return this;
+    }
+
+    @Step("Click on register/login button")
+    public SignupLoginPage clickOnRegisterLoginButton() {
+        driver.element().click(registerLoginBtn);
+        return new SignupLoginPage(driver);
     }
 
     // Verifications
@@ -72,6 +87,13 @@ public class CartPage {
                 .Equals(actualProductPrice, productPrice, "Product price does not match")
                 .Equals(actualProductQuantity, productQuantity, "Product quantity does not match")
                 .Equals(actualProductTotal, productTotal, "Product total does not match");
+        return this;
+    }
+
+    @Step("Verify check out label")
+    public CartPage verifyCheckOutLabel() {
+        String actualCheckOutLabel = driver.element().getText(checkOutLabel);
+        driver.verification().Equals("Checkout", actualCheckOutLabel, "Check out label does not match");
         return this;
     }
 }

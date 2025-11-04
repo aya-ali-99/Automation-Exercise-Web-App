@@ -78,9 +78,9 @@ public class ProductsPage {
     }
 
     @Step("Click on view cart button")
-    public ProductsPage clickOnViewCart() {
+    public CartPage clickOnViewCart() {
         driver.element().click(viewCartButton);
-        return this;
+        return new CartPage(driver);
     }
 
     @Step("Click on continue shopping button")

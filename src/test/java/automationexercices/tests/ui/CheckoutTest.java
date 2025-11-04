@@ -108,6 +108,14 @@ public class CheckoutTest extends BaseTest {
 
     }
 
+    @Description("Delete account")
+    @Test(dependsOnMethods = {"checkoutTC", "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC"})
+    public void deleteAccountTC(){
+        new UserManagementAPI().deleteUserAccount(
+                        testData.getJsonData("email")+ timeStamp+"@gmail.com",
+                        testData.getJsonData("password"))
+                .verifyUserIsDeletedSuccessfully();
+    }
 
     // Configurations
     @BeforeClass

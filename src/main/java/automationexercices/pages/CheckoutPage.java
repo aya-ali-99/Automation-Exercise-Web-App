@@ -51,9 +51,9 @@ public class CheckoutPage {
     }
 
     @Step("Click on place order button")
-    public CheckoutPage clickPlaceOrderBtn() {
+    public PaymentPage clickPlaceOrderBtn() {
         driver.element().click(placeOrderBtn);
-        return this;
+        return new PaymentPage(driver);
     }
 
     // Validations

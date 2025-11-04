@@ -23,7 +23,7 @@ public class CartTest extends BaseTest {
 
     // Tests
     @Test
-    public void verifyProductDetailsInCart() {
+    public void verifyProductDetailsInCartWithoutLogin() {
         new ProductsPage(driver)
                 .navigate()
                 .clickOnAddToCart(testData.getJsonData("product.name"))
