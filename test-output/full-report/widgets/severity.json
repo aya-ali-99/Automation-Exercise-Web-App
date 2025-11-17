@@ -1,1 +1,1 @@
-[{"uid":"54caebfdb0506955","name":"signUpTC","time":{"start":1761957600046,"stop":1761957605331,"duration":5285},"status":"passed","severity":"normal"}]
+[{"uid":"86c10883c4488548","name":"verifyErrorMsgWhenAccountCreatedBefore","time":{"start":1763233259039,"stop":1763233262223,"duration":3184},"status":"passed","severity":"critical"},{"uid":"cbb6427090a611cd","name":"validSignUpTC","time":{"start":1763233241630,"stop":1763233255504,"duration":13874},"status":"passed","severity":"critical"}]

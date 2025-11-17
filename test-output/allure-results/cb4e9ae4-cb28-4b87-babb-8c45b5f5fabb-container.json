@@ -1,1 +1,0 @@
-{"uuid":"cb4e9ae4-cb28-4b87-babb-8c45b5f5fabb","name":"automationexercices.tests.RegisterTest","children":["faf27845-701e-4cae-adc9-9ac1a4abf819"],"befores":[{"name":"preCondition","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1761957594581,"stop":1761957594599}],"afters":[],"start":1761957594542,"stop":1761957605618}
