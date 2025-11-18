@@ -7,8 +7,8 @@ on:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '* * * * *'
+#  schedule:
+#    - cron: '* * * * *'
   workflow_dispatch:
 
 env:
