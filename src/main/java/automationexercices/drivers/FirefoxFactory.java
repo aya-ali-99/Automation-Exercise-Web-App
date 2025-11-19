@@ -18,7 +18,7 @@ import java.util.Map;
 public class FirefoxFactory extends AbstractDriver {
     private FirefoxOptions getOptions() {
         FirefoxOptions options = new FirefoxOptions();
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.addArguments("--start-maximized");
         Map<String, Object> prefs = new HashMap<>();
         String userDir = System.getProperty("user.dir");

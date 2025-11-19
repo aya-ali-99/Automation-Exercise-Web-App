@@ -14,7 +14,7 @@ public class SafariFactory extends AbstractDriver {
     public SafariOptions getOptions() {
         SafariOptions options = new SafariOptions();
         options.setAcceptInsecureCerts(true);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         return options;
     }
 
