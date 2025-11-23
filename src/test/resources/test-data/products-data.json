@@ -16,5 +16,15 @@
   "messages" :
   {
     "cartAdded": "Your product has been added to cart."
+  },
+  "categoryWomen" :
+  {
+    "categoryName": "Women",
+    "categoryLabel": "WOMEN - TOPS PRODUCTS"
+  },
+  "categoryKids" :
+  {
+    "categoryName": "Kids",
+    "categoryLabel": "KIDS - DRESS PRODUCTS"
   }
 }

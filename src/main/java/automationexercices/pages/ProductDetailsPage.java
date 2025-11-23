@@ -27,6 +27,7 @@ public class ProductDetailsPage {
     private final By reviewTextArea = By.cssSelector("[placeholder=\"Add Review Here!\"]");
     private final By submitReviewButton = By.xpath("//*[@id=\"button-review\"]");
     private final By reviewSuccessMessage = By.cssSelector(".alert-success span");  //Thank you for your review.
+    private final By viewCartBtn = By.cssSelector(".modal-content u");
 
     // Actions
     @Step("Navigate to products details")
@@ -36,7 +37,7 @@ public class ProductDetailsPage {
     }
 
     @Step("Add product to cart")
-    public ProductDetailsPage addToCart(){
+    public ProductDetailsPage clickOnAddToCartButton(){
         driver.element().click(addToCartButton);
         return this;
     }
@@ -48,6 +49,18 @@ public class ProductDetailsPage {
                 .type(reviewTextArea, review)
                 .click(submitReviewButton);
         return this;
+    }
+
+    @Step("Add quantity")
+    public ProductDetailsPage addQuantity(String quantity){
+        driver.element().type(quantityInput, quantity);
+        return this;
+    }
+
+    @Step("Click on view cart button")
+    public CartPage clickOnViewCartButton(){
+        driver.element().click(viewCartBtn);
+        return new CartPage(driver);
     }
 
     // Verifications

@@ -100,9 +100,14 @@ public class ElementActions {
     }
 
     //upload file
-    public ElementActions uploadFile(By locator,String filePath)
+    public ElementActions uploadFile(By locator,String filePath, boolean absolutePath)
     {
-        String fileAbsolute = System.getProperty("user.dir") + File.separator  + filePath ;
+        String fileAbsolute;
+        if (!absolutePath) {
+            fileAbsolute = System.getProperty("user.dir") + File.separator  + filePath;
+        } else {
+            fileAbsolute = filePath;
+        }
         waitManager.fluentWait().until(d ->
                 {
                     try {
@@ -118,6 +123,7 @@ public class ElementActions {
         );
         return this;
     }
+
 
 
     //find an element

@@ -43,6 +43,27 @@ public class ProductsTest extends BaseTest {
                         testData.getJsonData("messages.cartAdded"));
     }
 
+    @Test
+    @Description("Choose Kids Dress Category")
+    public void chooseKidsDressCategoryTC(){
+        new ProductsPage(driver)
+                .navigate()
+                .clickOnCategoryChoice(
+                        testData.getJsonData("categoryKids.categoryName")
+                )
+                .clickOnKidsDressChoice()
+                .verifyCategoryProductsAreDisplayed(
+                        testData.getJsonData("categoryKids.categoryLabel")
+                )
+                .clickOnCategoryChoice(
+                        testData.getJsonData("categoryWomen.categoryName")
+                )
+                .clickOnWomenTopsChoice()
+                .verifyCategoryProductsAreDisplayed(
+                        testData.getJsonData("categoryWomen.categoryLabel")
+                );
+    }
+
 
     // Configurations
     @BeforeClass

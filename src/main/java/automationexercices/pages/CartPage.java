@@ -19,7 +19,7 @@ public class CartPage {
     // Locators
     private final By proceedToCheckOutBtn = By.cssSelector(".col-sm-6 a");
     private final By checkOutLabel = By.cssSelector(".modal-dialog");
-    private final By registerLoginBtn = By.cssSelector("[href=\"/login\"] u");
+    private final By registerLoginBtn = By.cssSelector(".modal-body u");
     private final By continueOnCart = By.cssSelector(".modal-footer button");
 
     // Dynamic Locators
@@ -81,19 +81,41 @@ public class CartPage {
         String actualProductPrice = driver.element().getText(productPrice(productName));
         String actualProductQuantity = driver.element().getText(productQuantity(productName));
         String actualProductTotal = driver.element().getText(productTotal(productName));
-        LogsManager.info("Actual product name:" + productName + ", actual product price:" + productPrice + ", actual product quantity:" + productQuantity + ", actual product total:" + productTotal);
+        LogsManager.info("Actual product name:" + productName
+                + ", actual product price:" + productPrice
+                + ", actual product quantity:" + productQuantity
+                + ", actual product total:" + productTotal);
         driver.validation()
-                .Equals(actualProductName, productName, "Product name does not match")
-                .Equals(actualProductPrice, productPrice, "Product price does not match")
-                .Equals(actualProductQuantity, productQuantity, "Product quantity does not match")
-                .Equals(actualProductTotal, productTotal, "Product total does not match");
+                .Equals(actualProductName,
+                        productName, "Product name does not match")
+                .Equals(actualProductPrice,
+                        productPrice, "Product price does not match")
+                .Equals(actualProductQuantity,
+                        productQuantity, "Product quantity does not match")
+                .Equals(actualProductTotal,
+                        productTotal, "Product total does not match");
+        return this;
+    }
+
+    @Step("Verify product quantity in cart")
+    public CartPage verifyProductQuantityInCart(String productName, String productQuantity) {
+        String actualProductQuantity = driver.element().getText(productQuantity(productName));
+        driver.verification().Equals(productQuantity,
+                actualProductQuantity, "Product quantity does not match");
         return this;
     }
 
     @Step("Verify check out label")
     public CartPage verifyCheckOutLabel() {
         String actualCheckOutLabel = driver.element().getText(checkOutLabel);
-        driver.verification().Equals("Checkout", actualCheckOutLabel, "Check out label does not match");
+        driver.verification().Equals("Checkout",
+                actualCheckOutLabel, "Check out label does not match");
+        return this;
+    }
+
+    @Step("Verify product is removed from cart")
+    public CartPage verifyProductIsRemovedFromCart(String productName) {
+        driver.verification().isElementNotVisible(getProductName(productName));
         return this;
     }
 }

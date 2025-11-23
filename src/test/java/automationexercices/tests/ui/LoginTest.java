@@ -89,6 +89,35 @@ public class LoginTest extends BaseTest {
                 .verifyUserIsDeletedSuccessfully();
     }
 
+    @Description("Verify user can logout")
+    @Test
+    public void logoutTC(){
+        new UserManagementAPI().createRegisterUserAccount(
+                        testData.getJsonData("loginName"),
+                        testData.getJsonData("loginEmail")+ timeStamp+"@gmail.com",
+                        testData.getJsonData("loginPassword"),
+                        testData.getJsonData("firstName"),
+                        testData.getJsonData("lastName"))
+                .verifyUserIsCreatedSuccessfully();
+
+        new SignupLoginPage(driver).navigate()
+                .enterLoginEmail(testData.getJsonData("loginEmail")+ timeStamp+"@gmail.com")
+                .enterLoginPassword(testData.getJsonData("loginPassword"))
+                .clickLoginButton()
+                .navigationBar
+                .verifyUserLabel(testData.getJsonData("loginName"))
+                .clickOnLogoutButton()
+                .navigationBar
+                .verifyLogoutButtonNotVisible()
+                .verifySignupLabelVisible();
+
+        new UserManagementAPI().deleteUserAccount(
+                        testData.getJsonData("loginEmail")+ timeStamp+"@gmail.com",
+                        testData.getJsonData("loginPassword"))
+                .verifyUserIsDeletedSuccessfully();
+
+    }
+
 
     // Configurations
     @BeforeClass

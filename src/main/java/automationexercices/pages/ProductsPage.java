@@ -26,10 +26,17 @@ public class ProductsPage {
     private final By itemAddedLabel = By.cssSelector(".modal-body > p");
     private final By viewCartButton = By.cssSelector("p > [href=\"/view_cart\"]");
     private final By continueShoppingButton = By.cssSelector(".modal-footer >button");
+    private final By kidsDressChoice = By.cssSelector("#Kids [href=\"/category_products/4\"]");
+    private final By CategoryLabel = By.cssSelector(".col-sm-9 .title");
+    private final By womenTopsChoice = By.cssSelector("#Women [href=\"/category_products/2\"]");
 
     // Dynamic Locators
     private By productName(String productName) {
         return By.xpath("//div[@class='features_items'] //div[@class='overlay-content'] /p[.='" + productName + "']");
+    }
+
+    private By categoryName(String categoryName) {
+        return By.cssSelector("[href=\"#"+categoryName+"\"]");
     }
 
     private By productPrice(String productName) {
@@ -89,6 +96,24 @@ public class ProductsPage {
         return this;
     }
 
+    @Step("Click on {categoryChoice} category choice")
+    public ProductsPage clickOnCategoryChoice(String categoryChoice) {
+        driver.element().click(categoryName(categoryChoice));
+        return this;
+    }
+
+    @Step("Click on kids dress choice")
+    public ProductsPage clickOnKidsDressChoice() {
+        driver.element().click(kidsDressChoice);
+        return this;
+    }
+
+    @Step("Click on women tops choice")
+    public ProductsPage clickOnWomenTopsChoice() {
+        driver.element().click(womenTopsChoice);
+        return this;
+    }
+
     // Validations
     @Step("Validate product details for {productName} with price {productPrice}")
     public ProductsPage validateProductDetails(String productName, String productPrice) {
@@ -105,6 +130,14 @@ public class ProductsPage {
         String actualLabel = driver.element().getText(itemAddedLabel);
         LogsManager.info("Actual item added label: " + actualLabel);
         driver.verification().Equals(actualLabel, expectedLabel, "Item added label does not match");
+        return this;
+    }
+
+    @Step("Verify category products are displayed")
+    public ProductsPage verifyCategoryProductsAreDisplayed(String label) {
+        String actualLabel = driver.element().getText(CategoryLabel);
+        LogsManager.info("Actual kids dress category label: " + actualLabel);
+        driver.verification().Equals(actualLabel, label, "Kids dress category label does not match");
         return this;
     }
 
