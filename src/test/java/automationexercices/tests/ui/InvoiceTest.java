@@ -236,6 +236,11 @@ public class InvoiceTest extends BaseTest {
     public void checkoutAfterLoginTC(){
         new CartPage(driver)
                 .navigate()
+                .verifyProductDetailsInCart(
+                        testData.getJsonData("product.name"),
+                        testData.getJsonData("product.price"),
+                        testData.getJsonData("product.quantity"),
+                        testData.getJsonData("product.total"))
                 .clickOnProceedToCheckoutButton()
                 .verifyDeliveryAddress(
                         testData.getJsonData("titleFemale"),
