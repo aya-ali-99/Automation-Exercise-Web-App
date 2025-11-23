@@ -56,6 +56,12 @@ public class CartPage {
         return new CheckoutPage(driver);
     }
 
+    @Step("Click on Proceed to Checkout button")
+    public CartPage clickOnProceedToCheckoutButtonWithoutLogin() {
+        driver.element().click(proceedToCheckOutBtn);
+        return this;
+    }
+
     @Step("Remove product from the cart")
     public CartPage removeProductFromCart(String productName) {
         driver.element().click(removeProductDL(productName));
