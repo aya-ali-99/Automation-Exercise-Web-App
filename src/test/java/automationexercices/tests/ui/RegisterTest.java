@@ -17,15 +17,17 @@ import org.testng.annotations.Test;
 
 @Epic("Automation Exercise ")
 @Feature("UI User Management")
-@Story("User Register")
+
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
 public class RegisterTest extends BaseTest {
     String timeStamp = TimeManager.getSimpleTimestamp();
 
     // Tests
-    @Description("Verify user can sign up with valid data")
+
     @Test
+    @Story("Valid User Register")
+    @Description("Verify user can sign up with valid data")
     public void validSignUpTC(){
         new SignupLoginPage(driver).navigate()
                 .enterSignupName(testData.getJsonData("signupName"))
@@ -58,8 +60,10 @@ public class RegisterTest extends BaseTest {
                 .verifyUserIsDeletedSuccessfully();
     }
 
-    @Description("Verify user can't sign up with existing email")
+
     @Test
+    @Story("Invalid User Register")
+    @Description("Verify user can't sign up with existing email")
     public void verifyErrorMsgWhenAccountCreatedBefore(){
         // Precondition: Create a user account
         new UserManagementAPI().createRegisterUserAccount(

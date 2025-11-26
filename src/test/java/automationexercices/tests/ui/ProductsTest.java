@@ -22,8 +22,9 @@ import org.testng.annotations.Test;
 public class ProductsTest extends BaseTest {
 
     // Tests
-    @Description("Search for product and validate its details without logging in")
+
     @Test
+    @Description("Verify searching for product without logging in")
     public void searchForProductWithoutLoginTC(){
         new ProductsPage(driver)
                 .navigate()
@@ -33,8 +34,9 @@ public class ProductsTest extends BaseTest {
                         testData.getJsonData("searchedProduct.price"));
     }
 
-    @Description("Add product to cart without logging in")
+
     @Test
+    @Description("Verify product added to cart without logging in")
     public void addProductToCartWithoutLoginTC(){
         new ProductsPage(driver)
                 .navigate()
@@ -44,7 +46,7 @@ public class ProductsTest extends BaseTest {
     }
 
     @Test
-    @Description("Choose Kids Dress Category")
+    @Description("Verify category products are displayed")
     public void chooseKidsDressCategoryTC(){
         new ProductsPage(driver)
                 .navigate()

@@ -17,7 +17,7 @@ public class ContactUsTest extends BaseTest {
 
     // Tests
     @Test
-    @Story("Contact form submission")
+    @Story("Valid Contact form submission")
     @Description("Verify that a user can successfully submit the contact form with a file attachment")
     @Severity(SeverityLevel.NORMAL)
     public void ContactUsFromWithUploadingFileTC(){
@@ -33,7 +33,7 @@ public class ContactUsTest extends BaseTest {
 
     }
     @Test
-    @Story("Contact form submission")
+    @Story("Valid Contact form submission")
     @Description("Verify that a user can successfully submit the contact form without a file attachment")
     @Severity(SeverityLevel.NORMAL)
     public void ContactUsFromWithoutUploadingFileTC(){

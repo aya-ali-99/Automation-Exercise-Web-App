@@ -25,8 +25,9 @@ public class PaymentTest extends BaseTest {
     String timeStamp = TimeManager.getSimpleTimestamp();
 
     // Tests
-    @Description("Register new account")
+
     @Test
+    @Description("Register new account")
     public void registerNewAccountTC(){
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("name"),
@@ -49,8 +50,9 @@ public class PaymentTest extends BaseTest {
                 .verifyUserIsCreatedSuccessfully();
     }
 
-    @Description("Login to account")
+
     @Test(dependsOnMethods = {"registerNewAccountTC"})
+    @Description("Login to account")
     public void loginToAccountTC(){
         new SignupLoginPage(driver).navigate()
                 .enterLoginEmail(testData.getJsonData("email")+ timeStamp+"@gmail.com")
@@ -60,8 +62,9 @@ public class PaymentTest extends BaseTest {
                 .verifyUserLabel(testData.getJsonData("name"));
     }
 
-    @Description("Add product to cart")
+
     @Test(dependsOnMethods = {"loginToAccountTC", "registerNewAccountTC"})
+    @Description("Add product to cart")
     public void addProductToCartTC(){
         new ProductsPage(driver)
                 .navigate()
@@ -75,8 +78,10 @@ public class PaymentTest extends BaseTest {
                         testData.getJsonData("product.total"));
     }
 
+
+    @Test(dependsOnMethods = {"addProductToCartTC", "loginToAccountTC",
+            "registerNewAccountTC"})
     @Description("Checkout")
-    @Test(dependsOnMethods = {"addProductToCartTC", "loginToAccountTC", "registerNewAccountTC"})
     public void checkoutTC(){
         new CartPage(driver)
                 .navigate()
@@ -110,8 +115,10 @@ public class PaymentTest extends BaseTest {
 
     }
 
+
+    @Test(dependsOnMethods = {"checkoutTC", "addProductToCartTC",
+            "loginToAccountTC", "registerNewAccountTC"})
     @Description("Payment")
-    @Test(dependsOnMethods = {"checkoutTC", "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC"})
     public void paymentTC(){
         new CheckoutPage(driver)
                 .clickPlaceOrderBtn()
@@ -127,8 +134,11 @@ public class PaymentTest extends BaseTest {
                 .clickDownloadInvoiceBtn();
     }
 
+
+    @Test(dependsOnMethods = {"paymentTC", "checkoutTC",
+            "addProductToCartTC", "loginToAccountTC",
+            "registerNewAccountTC"})
     @Description("Delete account")
-    @Test(dependsOnMethods = {"paymentTC", "checkoutTC", "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC"})
     public void deleteAccountTC(){
         new UserManagementAPI().deleteUserAccount(
                         testData.getJsonData("email")+ timeStamp+"@gmail.com",

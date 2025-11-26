@@ -15,15 +15,16 @@ import org.testng.annotations.Test;
 
 @Epic("Automation Exercise ")
 @Feature("UI User Management")
-@Story("User Login")
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
 public class LoginTest extends BaseTest {
     String timeStamp = TimeManager.getSimpleTimestamp();
 
     // Tests
-    @Description("Verify user can login with valid data")
+
     @Test
+    @Story("Valid User Login")
+    @Description("Verify user can login with valid data")
     public void validLoginTC(){
         new UserManagementAPI().createRegisterUserAccount(
                 testData.getJsonData("loginName"),
@@ -45,8 +46,10 @@ public class LoginTest extends BaseTest {
                 .verifyUserIsDeletedSuccessfully();
     }
 
-    @Description("Verify user can't login with invalid email")
+
     @Test
+    @Story("Invalid User Login")
+    @Description("Verify user can't login with invalid email")
     public void inValidLoginUsingInvalidEmailTC(){
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("loginName"),
@@ -67,8 +70,10 @@ public class LoginTest extends BaseTest {
                 .verifyUserIsDeletedSuccessfully();
     }
 
-    @Description("Verify user can't login with invalid password")
+
     @Test
+    @Story("Invalid User Login")
+    @Description("Verify user can't login with invalid password")
     public void inValidLoginUsingInvalidPasswordTC(){
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("loginName"),
@@ -89,8 +94,10 @@ public class LoginTest extends BaseTest {
                 .verifyUserIsDeletedSuccessfully();
     }
 
-    @Description("Verify user can logout")
+
     @Test
+    @Story("User Logout")
+    @Description("Verify user can logout")
     public void logoutTC(){
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("loginName"),

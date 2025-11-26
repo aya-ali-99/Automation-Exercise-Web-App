@@ -12,17 +12,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
+@Epic("Automation Exercise ")
+@Feature("UI Products Management")
+@Story("Product Details")
+@Severity(SeverityLevel.CRITICAL)
+@Owner("Aya")
 public class ProductDetailsTest extends BaseTest {
 
-
-    @Epic("Automation Exercise ")
-    @Feature("UI Products Management")
-    @Story("Product Details")
-    @Severity(SeverityLevel.CRITICAL)
-    @Owner("Aya")
     // Tests
-    @Description("Verify product details")
+
     @Test
+    @Description("Verify product details")
     public void verifyProductDetailsWithoutLoginTC(){
         new ProductsPage(driver)
                 .navigate()
@@ -32,8 +33,9 @@ public class ProductDetailsTest extends BaseTest {
                         testData.getJsonData("product.price"));
     }
 
-    @Description("Verify product review success message")
+
     @Test
+    @Description("Verify product review success message")
     public void verifyProductReviewSuccessMessageWithoutLoginTC(){
         new ProductsPage(driver)
                 .navigate()

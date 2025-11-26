@@ -13,6 +13,7 @@ import org.testng.annotations.*;
 
 @Epic("Automation Exercise ")
 @Feature("UI Checkout Management")
+@Story("Checkout Management")
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
 public class CheckoutTest extends BaseTest {
@@ -21,7 +22,7 @@ public class CheckoutTest extends BaseTest {
     // Tests
 
     @Test
-    @Description("Register new account")
+    @Description("Verify user can register with valid data")
     public void registerNewAccountTC(){
         new UserManagementAPI().createRegisterUserAccount(
                         testData.getJsonData("name"),
@@ -46,7 +47,7 @@ public class CheckoutTest extends BaseTest {
 
 
     @Test(dependsOnMethods = {"registerNewAccountTC"})
-    @Description("Login to account")
+    @Description("Verify user can login with valid data")
     public void loginToAccountTC(){
         new SignupLoginPage(driver).navigate()
                 .enterLoginEmail(testData.getJsonData("email")+ timeStamp+"@gmail.com")
@@ -58,7 +59,7 @@ public class CheckoutTest extends BaseTest {
 
 
     @Test(dependsOnMethods = {"loginToAccountTC", "registerNewAccountTC"})
-    @Description("Add product to cart")
+    @Description("Verify user can add product to cart")
     public void addProductToCartTC(){
         new ProductsPage(driver)
                 .navigate()
@@ -73,8 +74,9 @@ public class CheckoutTest extends BaseTest {
     }
 
 
-    @Test(dependsOnMethods = {"addProductToCartTC", "loginToAccountTC", "registerNewAccountTC"})
-    @Description("Checkout with login")
+    @Test(dependsOnMethods = {"addProductToCartTC", "loginToAccountTC",
+            "registerNewAccountTC"})
+    @Description("Verify user can checkout with login")
     public void checkoutTC(){
         new CartPage(driver)
                 .navigate()
