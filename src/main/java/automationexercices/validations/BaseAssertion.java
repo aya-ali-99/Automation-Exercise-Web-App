@@ -4,7 +4,9 @@ import automationexercices.FileUtils;
 import automationexercices.utils.WaitManager;
 import automationexercices.utils.actions.ElementActions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class BaseAssertion {
     protected WebDriver driver;
@@ -76,5 +78,21 @@ public abstract class BaseAssertion {
                 d -> FileUtils.isFileExists(fileName)
         );
         assertTrue(FileUtils.isFileExists(fileName), message);
+    }
+
+    // verify HTML5 validation appears for field
+    public void hasValidationError(By locator) {
+        WebElement element = driver.findElement(locator);
+        boolean isValid = (boolean) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].checkValidity();", element);
+        assertFalse(isValid, "Field should have validation error: " + locator);
+    }
+
+    // verify HTML5 validation message appears
+    public void validationMessageAppears(By locator) {
+        WebElement element = driver.findElement(locator);
+        String validationMessage = element.getAttribute("validationMessage");
+        boolean hasMessage = validationMessage != null && !validationMessage.isEmpty();
+        assertTrue(hasMessage, "Validation message should appear for field: " + locator);
     }
 }
