@@ -61,10 +61,10 @@ public class TestNGListeners implements ISuiteListener, IExecutionListener, IInv
                 case ITestResult.FAILURE -> ScreenshotsManager.takeFullPageScreenshot(driver,"failed-" + testResult.getName());
                 case ITestResult.SKIP -> ScreenshotsManager.takeFullPageScreenshot(driver,"skipped-" + testResult.getName());
             }
-            AllureAttachmentManager.attachRecords(testResult.getName());
+
 
             Validation.assertAll(testResult);
-
+            AllureAttachmentManager.attachRecords(testResult.getName());
             AllureAttachmentManager.attachLogs();
 
         }
