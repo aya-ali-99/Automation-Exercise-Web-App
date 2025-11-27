@@ -173,4 +173,10 @@ public class SignupPage {
         driver.verification().isElementVisible(accountCreatedLabel);
         return this;
     }
+
+    @Step("Verify Account Not Created")
+    public SignupPage verifyAccountNotCreated(){
+        driver.validation().isElementNotVisible(accountCreatedLabel);
+        return this;
+    }
 }

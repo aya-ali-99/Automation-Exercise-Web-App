@@ -92,4 +92,16 @@ public class SignupLoginPage {
         return this;
     }
 
+    @Step("Verify Email field validation message appears")
+    public SignupLoginPage verifyEmailFieldValidationMessageAppears(){
+        driver.verification().validationMessageAppears(signupEmail);
+        return this;
+    }
+
+    @Step("Verify Name field validation message appears")
+    public SignupLoginPage verifyNameFieldValidationMessageAppears(){
+        driver.verification().validationMessageAppears(signupName);
+        return this;
+    }
+
 }
