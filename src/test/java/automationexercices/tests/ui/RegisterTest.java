@@ -17,7 +17,6 @@ import org.testng.annotations.Test;
 
 @Epic("Automation Exercise ")
 @Feature("UI User Management")
-
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
 public class RegisterTest extends BaseTest {
@@ -96,6 +95,41 @@ public class RegisterTest extends BaseTest {
                         testData.getJsonData("signupPassword"))
                 .verifyUserIsDeletedSuccessfully();
     }
+
+    @Test
+    @Story("Invalid User Register")
+    @Description("Verify user can't sign up with empty email")
+    public void invalidSignUpWithEmptyEmailTC(){
+        new SignupLoginPage(driver).navigate()
+                .enterSignupName(testData.getJsonData("signupName"))
+                .enterSignupEmail(testData.getJsonData("InvalidData.emptyEmail"))
+                .clickSignupButton()
+                .verifyEmailFieldValidationMessageAppears();
+    }
+
+    @Test
+    @Story("Invalid User Register")
+    @Description("Verify user can't sign up with empty name")
+    public void invalidSignUpWithEmptyNameTC(){
+        new SignupLoginPage(driver).navigate()
+                .enterSignupName(testData.getJsonData("InvalidData.emptyName"))
+                .enterSignupEmail(testData.getJsonData("signupEmail")+ timeStamp+"@gmail.com")
+                .clickSignupButton()
+                .verifyNameFieldValidationMessageAppears();
+    }
+
+    @Test
+    @Story("Invalid User Register")
+    @Description("Verify user can't sign up with wrong email")
+    public void invalidSignUpWithWrongEmailTC(){
+        new SignupLoginPage(driver).navigate()
+                .enterSignupName(testData.getJsonData("signupName"))
+                .enterSignupEmail(testData.getJsonData("InvalidData.wrongEmail"))
+                .clickSignupButton()
+                .verifyEmailFieldValidationMessageAppears();
+    }
+
+
 
     // Configurations
     @BeforeClass

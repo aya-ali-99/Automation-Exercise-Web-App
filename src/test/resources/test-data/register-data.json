@@ -20,5 +20,23 @@
   "messages" :
   {
     "error": "Email Address already exist!"
+  },
+
+  "InvalidData" :
+  {
+    "emptyEmail": "",
+    "wrongEmail": "WrongEmail",
+    "emptyPassword": "",
+    "emptyFirstName": "",
+    "emptyLastName": "",
+    "emptyCompany": "",
+    "emptyAddress1": "",
+    "emptyAddress2": "",
+    "emptyCountry": "",
+    "emptyState": "",
+    "emptyCity": "",
+    "emptyZipcode": "",
+    "emptyMobileNumber": ""
+
   }
 }
