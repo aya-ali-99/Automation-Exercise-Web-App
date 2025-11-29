@@ -48,7 +48,8 @@ public class UserManagementAPI {
         formParams.put("state", state);
         formParams.put("city", city);
         formParams.put("mobile_number", mobile_number);
-        response = requestSpecification.spec(Builder.getUserManagementRequestSpecification(formParams))
+        response = requestSpecification
+                .spec(Builder.getUserManagementRequestSpecification(formParams))
                 .post(createAccount_endpoint);
         LogsManager.info(response.asPrettyString());
         return this;
@@ -75,7 +76,8 @@ public class UserManagementAPI {
         formParams.put("state", "state");
         formParams.put("city", "city");
         formParams.put("mobile_number", "1234567890");
-        response =  requestSpecification.spec(Builder.getUserManagementRequestSpecification(formParams))
+        response =  requestSpecification
+                .spec(Builder.getUserManagementRequestSpecification(formParams))
                 .post(createAccount_endpoint);
         LogsManager.info(response.asPrettyString());
         return this;
@@ -86,7 +88,8 @@ public class UserManagementAPI {
         Map<String, String > formParams = new HashMap<>();
         formParams.put("email", email);
         formParams.put("password", password);
-        response = requestSpecification.spec(Builder.getUserManagementRequestSpecification(formParams))
+        response = requestSpecification
+                .spec(Builder.getUserManagementRequestSpecification(formParams))
                 .delete(deleteAccount_endpoint);
         LogsManager.info(response.asPrettyString());
         return this;
@@ -106,7 +109,4 @@ public class UserManagementAPI {
         return this;
     }
 
-
-
-    // Validations
 }
