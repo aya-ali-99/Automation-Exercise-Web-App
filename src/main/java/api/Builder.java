@@ -1,6 +1,6 @@
 package api;
 
-import automationexercices.utils.dataReader.PropertyReader;
+import automationexercises.utils.dataReader.PropertyReader;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
