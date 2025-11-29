@@ -1,7 +1,7 @@
 package api;
 
-import automationexercices.utils.logs.LogsManager;
-import automationexercices.validations.Verification;
+import automationexercises.utils.logs.LogsManager;
+import automationexercises.validations.Verification;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
