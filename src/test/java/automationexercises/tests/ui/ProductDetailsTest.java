@@ -11,9 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-@Epic("Automation Exercise ")
-@Feature("UI Products Management")
+@Epic("Automation Exercise")
+@Feature("Product Management")
 @Story("Product Details")
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
@@ -22,8 +21,10 @@ public class ProductDetailsTest extends BaseTest {
     // Tests
 
     @Test
+    @Story("Product Details")
     @Description("Verify product details")
-    public void verifyProductDetailsWithoutLoginTC(){
+    @Severity(SeverityLevel.CRITICAL)
+    public void verifyProductDetailsWithoutLoginTC() {
         new ProductsPage(driver)
                 .navigate()
                 .clickOnViewProduct(testData.getJsonData("product.name"))
@@ -32,10 +33,11 @@ public class ProductDetailsTest extends BaseTest {
                         testData.getJsonData("product.price"));
     }
 
-
     @Test
+    @Story("Product Review")
     @Description("Verify product review success message")
-    public void verifyProductReviewSuccessMessageWithoutLoginTC(){
+    @Severity(SeverityLevel.NORMAL)
+    public void verifyProductReviewSuccessMessageWithoutLoginTC() {
         new ProductsPage(driver)
                 .navigate()
                 .clickOnViewProduct(testData.getJsonData("product.name"))
@@ -47,8 +49,10 @@ public class ProductDetailsTest extends BaseTest {
     }
 
     @Test
+    @Story("Product Quantity")
     @Description("Verify product quantity in cart")
-    public void verifyProductQuantityInCartWithoutLoginTC(){
+    @Severity(SeverityLevel.CRITICAL)
+    public void verifyProductQuantityInCartWithoutLoginTC() {
         new ProductsPage(driver)
                 .navigate()
                 .clickOnViewProduct(testData.getJsonData("product.name"))
@@ -59,11 +63,9 @@ public class ProductDetailsTest extends BaseTest {
                         testData.getJsonData("addQuantity"));
     }
 
-
-
     // Configurations
     @BeforeClass
-    public void preCondition(){
+    public void preCondition() {
         testData = new JsonReader("product-details-data");
     }
 

@@ -11,18 +11,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-
-@Epic("Automation Exercise ")
-@Feature("UI Cart Management")
-@Story("Cart Details")
+@Epic("Automation Exercise")
+@Feature("Cart Management")
+@Story("View Cart")
 @Severity(SeverityLevel.CRITICAL)
 @Owner("Aya")
 public class CartTest extends BaseTest {
 
     // Tests
     @Test
+    @Story("View Cart")
     @Description("Verify product details in cart without login")
+    @Severity(SeverityLevel.CRITICAL)
     public void verifyProductDetailsInCartWithoutLogin() {
         new ProductsPage(driver)
                 .navigate()
@@ -37,7 +37,9 @@ public class CartTest extends BaseTest {
     }
 
     @Test
+    @Story("Remove from Cart")
     @Description("Verify product is removed successfully from cart")
+    @Severity(SeverityLevel.CRITICAL)
     public void verifyProductIsRemovedSuccessfullyFromCart() {
         new ProductsPage(driver)
                 .navigate()
@@ -56,7 +58,7 @@ public class CartTest extends BaseTest {
 
     // Configurations
     @BeforeClass
-    public void preCondition(){
+    public void preCondition() {
         testData = new JsonReader("cart-data");
     }
 
