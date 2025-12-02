@@ -133,9 +133,9 @@ After test execution, generate and view the Allure report:
 
 ---
 
-## 👨‍💻 Author
+## 👩🏻‍💻 Author
 
-**Aya Ali Mohamed** - *Graduation Project in ITI*
+**Aya Ali Mohamed**  
+*Software Testing Engineer | ITI Graduate*
 
----
-*Happy Testing!* 🕵️‍♀️🐞
+> This project was developed with ❤️ as ITI Graduation Project.
