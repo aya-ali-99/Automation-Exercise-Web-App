@@ -1,5 +1,8 @@
 # 🚀 Automation Exercise Web App Test Automation
+> **ITI Graduation Project**  
+> **Submitted by:** Aya Ali Mohamed
 
+---
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-4.37.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-7.11.0-FF7F00?style=for-the-badge&logo=testng&logoColor=white)
