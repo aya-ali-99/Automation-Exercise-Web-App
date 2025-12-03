@@ -16,58 +16,19 @@ import org.testng.annotations.Test;
 @Epic("Automation Exercise")
 @Feature("E2E Scenarios")
 @Owner("Aya")
-public class E2eScenarioOne extends BaseTest {
+public class E2eScenarioTwoTest extends BaseTest {
 
     String timeStamp = TimeManager.getSimpleTimestamp();
 
     // Tests
 
-    // Place order scenario 1: register & login before checkout
+    // Place order scenario 2: register & login before checkout
 
-    @Test(groups = { "scenario_1" })
-    @Story("Place order scenario 1: register & login before checkout")
-    @Description("Register new account")
-    @Severity(SeverityLevel.CRITICAL)
-    public void registerNewAccountTC() {
-        new UserManagementAPI().createRegisterUserAccount(
-                        testData.getJsonData("name"),
-                        (testData.getJsonData("email") + timeStamp + "@gmail.com"),
-                        testData.getJsonData("password"),
-                        testData.getJsonData("titleFemale"),
-                        testData.getJsonData("day"),
-                        testData.getJsonData("month"),
-                        testData.getJsonData("year"),
-                        testData.getJsonData("firstName"),
-                        testData.getJsonData("lastName"),
-                        testData.getJsonData("companyName"),
-                        testData.getJsonData("address1"),
-                        testData.getJsonData("address2"),
-                        testData.getJsonData("country"),
-                        testData.getJsonData("zipcode"),
-                        testData.getJsonData("state"),
-                        testData.getJsonData("city"),
-                        testData.getJsonData("mobileNumber"))
-                .verifyUserIsCreatedSuccessfully();
-    }
-
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
-    @Description("Login to account")
-    @Severity(SeverityLevel.CRITICAL)
-    public void loginToAccountTC() {
-        new SignupLoginPage(driver).navigate()
-                .enterLoginEmail(testData.getJsonData("email") + timeStamp + "@gmail.com")
-                .enterLoginPassword(testData.getJsonData("password"))
-                .clickLoginButton().navigationBar
-                .verifyUserLabel(testData.getJsonData("name"));
-    }
-
-
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "loginToAccountTC", "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
+    @Test(groups = { "scenario_2" })
+    @Story("Place order scenario 2: register & login after checkout")
     @Description("Add product to cart")
     @Severity(SeverityLevel.CRITICAL)
-    public void addProductToCartTC() {
+    public void addProductToCartBeforeLoginTC() {
         new ProductsPage(driver)
                 .navigate()
                 .clickOnCategoryChoice(
@@ -93,9 +54,8 @@ public class E2eScenarioOne extends BaseTest {
                         testData.getJsonData("product2.total"));
     }
 
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "addProductToCartTC", "loginToAccountTC",
-            "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"addProductToCartBeforeLoginTC"})
+    @Story("Place order scenario 2: register & login after checkout")
     @Description("Remove product from cart")
     @Severity(SeverityLevel.CRITICAL)
     public void removeProductFromCartTC() {
@@ -105,14 +65,66 @@ public class E2eScenarioOne extends BaseTest {
                 .verifyProductIsRemovedFromCart(testData.getJsonData("product2.name"));
     }
 
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "removeProductFromCartTC", "addProductToCartTC",
-            "loginToAccountTC", "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
-    @Description("Checkout")
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC" })
+    @Story("Place order scenario 2: register & login after checkout")
+    @Description("Checkout without login")
     @Severity(SeverityLevel.CRITICAL)
-    public void checkoutTC() {
+    public void checkoutBeforeLoginTC() {
         new CartPage(driver)
                 .navigate()
+                .clickOnProceedToCheckoutButtonWithoutLogin()
+                .clickOnRegisterLoginButton()
+                .verifySignupLabelVisible();
+    }
+
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC", "checkoutBeforeLoginTC" })
+    @Story("Place order scenario 2: register & login after checkout")
+    @Description("Sign up with valid data")
+    @Severity(SeverityLevel.CRITICAL)
+    public void validSignUpTC() {
+        timeStamp += 1;
+        new SignupLoginPage(driver)
+                .enterSignupName(testData.getJsonData("name"))
+                .enterSignupEmail(testData.getJsonData("email") + timeStamp + "@gmail.com")
+                .clickSignupButton();
+        new SignupPage(driver)
+                .enterPassword(testData.getJsonData("password"))
+                .selectBirtDate(testData.getJsonData("day"),
+                        testData.getJsonData("month"),
+                        testData.getJsonData("year"))
+                .selectNewsletter()
+                .selectSpecialOffers()
+                .selectTitle(testData.getJsonData("titleFemale"))
+                .enterFirstName(testData.getJsonData("firstName"))
+                .enterLastName(testData.getJsonData("lastName"))
+                .enterCompany(testData.getJsonData("companyName"))
+                .enterAddress1(testData.getJsonData("address1"))
+                .enterAddress2(testData.getJsonData("address2"))
+                .selectCountry(testData.getJsonData("country"))
+                .enterState(testData.getJsonData("state"))
+                .enterCity(testData.getJsonData("city"))
+                .enterZipcode(testData.getJsonData("zipcode"))
+                .enterMobileNumber(testData.getJsonData("mobileNumber"))
+                .clickCreateAccountButton()
+                .verifyAccountCreatedLabel();
+
+    }
+
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC", "checkoutBeforeLoginTC", "validSignUpTC" })
+    @Story("Place order scenario 2: register & login after checkout")
+    @Description("Checkout after registering")
+    @Severity(SeverityLevel.CRITICAL)
+    public void checkoutAfterLoginTC() {
+        new CartPage(driver)
+                .navigate()
+                .verifyProductDetailsInCart(
+                        testData.getJsonData("product.name"),
+                        testData.getJsonData("product.price"),
+                        testData.getJsonData("product.quantity"),
+                        testData.getJsonData("product.total"))
                 .clickOnProceedToCheckoutButton()
                 .verifyDeliveryAddress(
                         testData.getJsonData("titleFemale"),
@@ -138,15 +150,15 @@ public class E2eScenarioOne extends BaseTest {
                         testData.getJsonData("zipcode"),
                         testData.getJsonData("country"),
                         testData.getJsonData("mobileNumber"));
-
     }
 
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "removeProductFromCartTC", "checkoutTC",
-            "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC", "checkoutBeforeLoginTC", "validSignUpTC",
+            "checkoutAfterLoginTC" })
+    @Story("Place order scenario 2: register & login after checkout")
     @Description("Payment")
     @Severity(SeverityLevel.CRITICAL)
-    public void paymentTC() {
+    public void paymentScenario2TC() {
         new CheckoutPage(driver)
                 .clickPlaceOrderBtn()
                 .fillCardInfo(
@@ -160,29 +172,32 @@ public class E2eScenarioOne extends BaseTest {
                 .clickDownloadInvoiceBtn();
     }
 
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "removeProductFromCartTC", "paymentTC",
-            "checkoutTC", "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC", "checkoutBeforeLoginTC", "validSignUpTC",
+            "checkoutAfterLoginTC", "paymentScenario2TC" })
+    @Story("Place order scenario 2: register & login after checkout")
     @Description("Verify invoice file")
     @Severity(SeverityLevel.CRITICAL)
-    public void verifyInvoiceFileTC() {
+    public void verifyInvoiceFileScenario2TC() {
         new PaymentPage(driver)
                 .clickDownloadInvoiceBtn()
                 .verifyDownloadInvoiceFile(
                         testData.getJsonData("invoiceName"));
     }
 
-    @Test(groups = { "scenario_1" }, dependsOnMethods = { "removeProductFromCartTC", "verifyInvoiceFileTC",
-            "paymentTC", "checkoutTC", "addProductToCartTC", "loginToAccountTC", "registerNewAccountTC" })
-    @Story("Place order scenario 1: register & login before checkout")
+    @Test(groups = { "scenario_2" }, dependsOnMethods = {"removeProductFromCartTC",
+            "addProductToCartBeforeLoginTC", "checkoutBeforeLoginTC", "validSignUpTC",
+            "checkoutAfterLoginTC", "paymentScenario2TC", "verifyInvoiceFileScenario2TC" })
+    @Story("Place order scenario 2: register & login after checkout")
     @Description("Delete account")
     @Severity(SeverityLevel.CRITICAL)
-    public void deleteAccountTC() {
+    public void deleteAccountScenario2TC() {
         new UserManagementAPI().deleteUserAccount(
                         testData.getJsonData("email") + timeStamp + "@gmail.com",
                         testData.getJsonData("password"))
                 .verifyUserIsDeletedSuccessfully();
     }
+
 
     // Configurations
     @BeforeClass
