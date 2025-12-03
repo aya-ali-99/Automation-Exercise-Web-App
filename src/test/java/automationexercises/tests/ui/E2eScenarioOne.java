@@ -7,14 +7,15 @@ import automationexercises.pages.components.NavigationBarComponent;
 import automationexercises.tests.BaseTest;
 import automationexercises.utils.TimeManager;
 import automationexercises.utils.dataReader.JsonReader;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
+@Epic("Automation Exercise")
+@Feature("E2E Scenarios")
+@Owner("Aya")
 public class E2eScenarioOne extends BaseTest {
 
     String timeStamp = TimeManager.getSimpleTimestamp();
